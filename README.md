@@ -5,6 +5,7 @@ Basic framework to use in game jams
 
 ### Features
 - Deals with window shit (Java Swing)
+- Receives input from player
 - Controls game loop/frame rate
 - Provides basic types for 2D graphics (`Rectangle`, `Size`, `Point`, etc.)
 - ?
