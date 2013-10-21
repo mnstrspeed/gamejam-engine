@@ -1,4 +1,4 @@
-package nl.tomsanders.game.egine;
+package nl.tomsanders.game.engine;
 
 public class GameTime {
 	private final long systemTime;

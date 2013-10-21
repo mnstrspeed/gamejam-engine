@@ -1,23 +1,33 @@
-package nl.tomsanders.game.egine;
+package nl.tomsanders.game.engine;
 
-import java.awt.Graphics;
+import game.Level;
+import game.objects.Player;
+
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.event.KeyListener;
 
-public class Game implements Renderable {
+public class Game{
 	
 	private GameLoop loop;
 	private GameWindow window;
 	
-	public Game() {
-		this.loop = new GameLoop(this);
-		
-		this.window = new GameWindow(this);
+	public Game(GameWindow window) {
+		this.window = window;
 		this.window.setVisible(true);
+		this.loop = new GameLoop(this);
 	}
 	
 	public void start() {
-		this.loadContent();
 		this.loop.start();
+	}
+	
+	public void addKeyListener(KeyListener listener) {
+		this.window.addKeyListener(listener);
+	}
+	
+	public void removeKeyListener(KeyListener listener) {
+		this.window.removeKeyListener(listener);
 	}
 
 	public boolean isRunning() {
@@ -25,10 +35,6 @@ public class Game implements Renderable {
 	}
 	
 	public void prepareNextFrame(GameTime time) {
-		if (time.isRunningSlow())
-			this.window.setTitle("Running slow");
-		
-		this.updateInputs();
 		this.update(time);
 		this.window.renderFrame();
 	}
@@ -37,16 +43,19 @@ public class Game implements Renderable {
 		return this.window.getRenderBounds();
 	}
 	
-	private void loadContent() {
-	}
-	
-	private void updateInputs() {	
-	}
-	
 	public void update(GameTime time) {
+		System.out.println("Game.update");
 	}
 	
-	public void render(Graphics g) {
+	public void render(Graphics2D g, Level level) {
+		System.out.println("Game.render");
+		window.render(g, level);
+	}
+	
+	public void render(Graphics2D g) {
+	}
+	
+	public void setLevel(Level level) {
 	}
 	
 }

@@ -1,4 +1,4 @@
-package nl.tomsanders.game.egine;
+package nl.tomsanders.game.engine;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -6,8 +6,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import nl.tomsanders.game.engine.util.Size;
+
 @SuppressWarnings("serial")
 public class DoubleBufferedCanvas extends Canvas {
+	
 	@Override
 	public void repaint() {
 		this.update(this.getGraphics());

@@ -1,7 +1,7 @@
-package nl.tomsanders.game.egine;
+package nl.tomsanders.game.engine;
 
 public class GameLoop {
-	private Game target;
+	private GameBase target;
 	
 	private boolean running = false;
 	private boolean runningSlow = false;
@@ -10,7 +10,7 @@ public class GameLoop {
 	private final long MILLISECONDS_PER_SECOND = 1000;
 	private final long MILLISECONDS_PER_FRAME = MILLISECONDS_PER_SECOND / FRAMES_PER_SECOND;
 	
-	public GameLoop(Game target) {
+	public GameLoop(GameBase target) {
 		this.target = target;
 	}
 	
